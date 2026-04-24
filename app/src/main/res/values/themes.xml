@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Recycler_view_kazakov." parent="Theme.AppCompat.DayNight.NoActionBar"></style>
+
+    <style name="Base.Theme.Recycler_view_kazakov" parent="Base.Theme.Recycler_view_kazakov" >
+        <item name="colorPrimaryDark">@color/blue</item>
+    </style>
+</resources>
