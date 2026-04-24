@@ -6,12 +6,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F9"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#F7F7F9">
 
-    <!-- ==================== ШАПКА ЭКРАНА ==================== -->
-
-    <!-- Иконка меню -->
     <ImageView
         android:id="@+id/ic_menu"
         android:layout_width="48dp"
@@ -25,22 +22,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Название страницы -->
     <TextView
         android:id="@+id/name_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Главная"
+        android:layout_marginTop="35dp"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:gravity="center"
-        android:layout_marginTop="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Кнопка корзины -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_basket"
         android:layout_width="48dp"
@@ -54,10 +49,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- ==================== ПОИСК ==================== -->
-
     <LinearLayout
-        android:id="@+id/linearLayout_search"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_marginHorizontal="20dp"
@@ -67,7 +60,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_page">
 
-        <!-- Поле поиска (ИСПРАВЛЕНО) -->
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/editText_search"
             android:layout_width="0dp"
@@ -81,40 +73,34 @@
             android:textColorHint="#6A6A6A"
             android:textSize="14sp"
             android:inputType="text"
-            android:importantForAccessibility="yes"
             android:autofillHints="search"
             android:imeOptions="actionSearch"
             android:maxLines="1"
             android:singleLine="true" />
 
-        <!-- Кнопка настроек -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_settings"
             android:layout_width="52dp"
-            android:layout_height="match_parent"
+            android:layout_height="52dp"
             android:background="@drawable/ic_settings_xml"
             android:contentDescription="Настройки поиска и фильтрации" />
 
     </LinearLayout>
 
-    <!-- ==================== КАТЕГОРИИ ==================== -->
-
-    <!-- Заголовок "Категории" -->
     <TextView
         android:id="@+id/tv_name_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="22dp"
         android:text="Категории"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout_search" />
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
-    <!-- Горизонтальный список категорий -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/category_list"
         android:layout_width="match_parent"
@@ -128,24 +114,20 @@
         app:layout_constraintTop_toBottomOf="@id/tv_name_category"
         tools:listitem="@layout/item_category" />
 
-    <!-- ==================== ПОПУЛЯРНЫЕ ТОВАРЫ ==================== -->
-
-    <!-- Заголовок "Популярное" -->
     <TextView
         android:id="@+id/tv_name_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="24dp"
         android:text="Популярное"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/category_list" />
 
-    <!-- Кнопка "Все" (ИСПРАВЛЕНО - увеличен touch target) -->
     <TextView
         android:id="@+id/tv_see_all"
         android:layout_width="wrap_content"
@@ -153,11 +135,11 @@
         android:minWidth="48dp"
         android:gravity="center"
         android:paddingHorizontal="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
         android:text="Все"
         android:textSize="14sp"
         android:textColor="#48B2E7"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="OpenPopularView"
@@ -165,7 +147,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/category_list" />
 
-    <!-- Горизонтальный список популярных товаров -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/card_list"
         android:layout_width="match_parent"
@@ -179,9 +160,6 @@
         app:layout_constraintTop_toBottomOf="@id/tv_name_card"
         tools:listitem="@layout/item_product_card" />
 
-    <!-- ==================== НИЖНЯЯ НАВИГАЦИЯ ==================== -->
-
-    <!-- Контейнер для нижней навигации (вставляется через include или Fragment) -->
     <FrameLayout
         android:id="@+id/menu_navigation"
         android:layout_width="match_parent"
