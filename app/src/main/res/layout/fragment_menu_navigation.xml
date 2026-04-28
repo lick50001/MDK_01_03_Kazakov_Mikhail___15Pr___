@@ -46,8 +46,7 @@
         android:contentDescription="Избранное"
         android:onClick="onHeartClick"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/bthHome"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/bthHome"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bthUser"

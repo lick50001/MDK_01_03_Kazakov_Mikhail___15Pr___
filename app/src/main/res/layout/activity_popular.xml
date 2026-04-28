@@ -42,7 +42,7 @@
         android:layout_height="48dp"
         android:padding="10dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_basket_xml"
+        android:src="@android:drawable/ic_menu_delete"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="12dp"
         android:contentDescription="Корзина. Перейти к оформлению заказа"
